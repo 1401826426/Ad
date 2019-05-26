@@ -1,30 +1,3 @@
-server:
-  port: 8010
-  servlet:
-    context-path: /ad-sponsor
-
 spring:
-  application:
-    name: ad-sponsor
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: none
-    properties:
-      hibernate.format_sql: true
-    open-in-view: false
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/ad?useUnicode=true&amp;characterEncoding=utf8
-    username: root
-    password: 123qwert
-    driver-class-name: com.mysql.jdbc.Driver
-    tomcat:
-      max-active: 4
-      min-idle: 2
-      initial-size: 2
-
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+  profiles:
+    active: home

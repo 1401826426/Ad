@@ -12,7 +12,7 @@ public class AdPlan {
 	private long id;
 
 	//标记当前记录所属用户
-	private String userId;
+	private long userId;
 
 	//推广计划名称
 	private String planName;
@@ -40,11 +40,11 @@ public class AdPlan {
 	    return id;
 	}
 
-	public void setUserId(String userId){
+	public void setUserId(long userId){
 	    this.userId = userId;
 	}
 
-	public String getUserId(){
+	public long getUserId(){
 	    return userId;
 	}
 
@@ -96,8 +96,7 @@ public class AdPlan {
 	    return updateTime;
 	}
 
-	public AdPlan(long id, String userId, String planName, Date startDate, Date endDate) {
-		this.id = id;
+	public AdPlan(long userId, String planName, Date startDate, Date endDate) {
 		this.userId = userId;
 		this.planName = planName;
 		this.planStatus = PlanStatus.VALID.getStatus();

@@ -1,9 +1,14 @@
 package com.fei.adsponsor.entity;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
+@Data
+@NoArgsConstructor
 public class AdCreative {
 
 	//自增主键
@@ -35,7 +40,7 @@ public class AdCreative {
 	private byte auditStatus;
 
 	//标记当前记录所属用户
-	private String userId;
+	private long userId;
 
 	//物料地址
 	private String url;
@@ -46,111 +51,17 @@ public class AdCreative {
 	//更新时间
 	private Date updateTime;
 
-	public void setId(long id){
-	    this.id = id;
+	public AdCreative(AdCreative creative) {
+		this.name = creative.getName();
+		this.type = creative.getType();
+		this.materialType = creative.getMaterialType() ;
+		this.height = creative.getHeight() ;
+		this.width = creative.getWidth() ;
+		this.size = creative.getSize() ;
+		this.duration = creative.getDuration() ;
+		this.auditStatus = creative.getAuditStatus();
+		this.url = creative.getUrl() ;
+		this.createTime = new Date() ;
+		this.updateTime = new Date() ;
 	}
-
-	public long getId(){
-	    return id;
-	}
-
-	public void setName(String name){
-	    this.name = name;
-	}
-
-	public String getName(){
-	    return name;
-	}
-
-	public void setType(byte type){
-	    this.type = type;
-	}
-
-	public byte getType(){
-	    return type;
-	}
-
-	public void setMaterialType(byte materialType){
-	    this.materialType = materialType;
-	}
-
-	public byte getMaterialType(){
-	    return materialType;
-	}
-
-	public void setHeight(int height){
-	    this.height = height;
-	}
-
-	public int getHeight(){
-	    return height;
-	}
-
-	public void setWidth(int width){
-	    this.width = width;
-	}
-
-	public int getWidth(){
-	    return width;
-	}
-
-	public void setSize(String size){
-	    this.size = size;
-	}
-
-	public String getSize(){
-	    return size;
-	}
-
-	public void setDuration(int duration){
-	    this.duration = duration;
-	}
-
-	public int getDuration(){
-	    return duration;
-	}
-
-	public void setAuditStatus(byte auditStatus){
-	    this.auditStatus = auditStatus;
-	}
-
-	public byte getAuditStatus(){
-	    return auditStatus;
-	}
-
-	public void setUserId(String userId){
-	    this.userId = userId;
-	}
-
-	public String getUserId(){
-	    return userId;
-	}
-
-	public void setUrl(String url){
-	    this.url = url;
-	}
-
-	public String getUrl(){
-	    return url;
-	}
-
-	public void setCreateTime(Date createTime){
-	    this.createTime = createTime;
-	}
-
-	public Date getCreateTime(){
-	    return createTime;
-	}
-
-	public void setUpdateTime(Date updateTime){
-	    this.updateTime = updateTime;
-	}
-
-	public Date getUpdateTime(){
-	    return updateTime;
-	}
-
-
-
-
 }
